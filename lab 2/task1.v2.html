@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            color: white;
+            background-color: #333;
+        }
+
+        main {
+            height: 800px;
+            text-align: center;
+            background: url('pexels-eberhardgross-691668.jpg') no-repeat center center/cover;
+            padding: 2rem 0;
+        }
+
+        .intro-section {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-weight: bold;
+            font-size: 2rem;
+            margin: 1rem 0;
+            margin-top: 20%;
+            color: rgb(255, 255, 255);
+            text-shadow: 2px 2px 3px black;
+        }
+
+        .class {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        .register-btn {
+            margin: 1rem auto;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            background-color: rgba(5, 3, 3, 0.5);
+            color: white;
+            border: 2px solid white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .register-btn:hover {
+            background-color: rgb(202, 22, 22);
+        }
+
+        .activities-title {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 2rem;
+            color: rgb(255, 255, 255);
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .activity-card {
+            background-color: white;
+            border-radius: 8px;
+            position: relative;
+            width: 300px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .activity-card:hover {
+            transform: scale(1.05);
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: auto;
+        }
+
+        .social-icons {
+            padding: auto;
+            margin-left: 38px;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .activity-card:hover .social-icons {
+            display: block;
+            opacity: 1;
+        }
+
+        .social-icons i {
+            font-size: 1.5rem;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            margin: 0 5px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-icons i:hover {
+            background-color: rgb(0, 136, 255);
+        }
+
+        .card-description {
+            padding: 1rem;
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 1.5rem;
+                margin-top: 10%;
+            }
+
+            .intro-section {
+                width: 90%;
+            }
+
+            .register-btn {
+                font-size: 1rem;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .card-container {
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .register-btn {
+                font-size: 0.9rem;
+                padding: 0.8rem 1.2rem;
+            }
+
+            .card-container {
+                gap: 5px;
+            }
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <main>
+        <section class="intro-section">
+            <h1 class="section-title">ITI Zagazig</h1>
+            <p class="class">Labore veritatis dignissimos illo ut magnam, quae enim consequatur temporibus tempore, officia eveniet
+                dolore minima quis ullam fugiat earum! Accusamus, asperiores officiis? Quis inventore eum placeat
+                perferendis voluptatem nostrum mollitia modi, dolorem incidunt fugit animi vel. Quod provident
+                reprehenderit, obcaecati, maiores asperiores numquam accusamus, ab culpa iusto corrupti facere. Quo,
+                dolor provident.</p>
+            <button class="register-btn">Register Now</button>
+        </section>
+    </main>
+
+    <h1 class="activities-title">Activities</h1>
+
+    <div class="card-container">
+        <div class="activity-card">
+            <div class="image-wrapper">
+                <img src="photo-1516321318423-f06f85e504b3.avif" alt="Old Red T-shirt" class="activity-image">
+                <div class="social-icons">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+            <p class="card-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit...</p>
+        </div>
+        <div class="activity-card">
+            <div class="image-wrapper">
+                <img src="photo-1434030216411-0b793f4b4173.avif" alt="Old T-shirt" class="activity-image">
+                <div class="social-icons">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+            <p class="card-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit...</p>
+        </div>
+        <div class="activity-card">
+            <div class="image-wrapper">
+                <img src="vasily-koloda-8CqDvPuo_kI-unsplash.jpg" alt="Black T-shirt" class="activity-image">
+                <div class="social-icons">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+            <p class="card-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit...</p>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
