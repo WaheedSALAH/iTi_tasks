@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Video Layout</title>
+    <script defer src="functions.js"></script>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100vh;
+}
+
+#list_of_vids {
+    border-right: 2px solid #333;
+    width: 25%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    background-color: #fff;
+}
+
+#list_of_vids::-webkit-scrollbar {
+    width: 8px;
+}
+
+#list_of_vids::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+#list_of_vids::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+#videos {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    padding: 15px;
+}
+
+#currentvideo {
+    max-width: 100%;
+    max-height: 100%;
+    width: 70%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* #currentvideo:hover {
+    transform: scale(1.1);
+} */
+
+.vids {
+    border: 2px solid #444;
+    padding: 8px;
+    border-radius: 8px;
+    background: #eee;
+    transition: all 0.3s ease-in-out;
+}
+
+.vids:hover {
+    cursor: pointer;
+    background: #ddd;
+    /* transform: scale(1.05); */
+}
+.video-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* background: rgba(0, 0, 0, 0.7); */
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.video-controls input {
+    width: 100px;
+}
+
+.video-controls button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+/* @keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+} */
+
+.vids:hover {
+    animation: spin 0.8s linear;
+}
+
+@media (max-width: 1024px) {
+    main {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #list_of_vids {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 2px solid #333;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 10px;
+        padding-bottom: 10px;
+    }
+
+    #videos {
+        width: 100%;
+        height: 70vh;
+    }
+
+    #currentvideo {
+        width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    #list_of_vids {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    }
+
+    #videos {
+        height: 60vh;
+    }
+
+    #currentvideo {
+        width: 95%;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <main>
+        <section id="list_of_vids">
+        
+        </section>
+        <section id="videos">
+            <video id="currentvideo" src="" muted></video>
+        </section>
+    </main>
+</body>
+</html>
